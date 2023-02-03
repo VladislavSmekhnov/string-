@@ -4,6 +4,19 @@ Implementation of the `string.h` library with additions.
 
 ## Project completed with result: `135%`
 
+#### To run Unit tests type (in src/):
+```sh
+make test
+```
+#### To see LCOV report type (in src/):
+```sh
+make gcov_report
+```
+#### To clean project type (in src/):
+```sh
+make clean
+```
+
 ## Contents
 0. [Preamble](#preamble)
 1. [Chapter I](#chapter-i) \
