@@ -56,22 +56,27 @@ gcov_report: clean add_report_flags test
 	$(OPEN_CMD) ./report/index.html
 
 clang:
-	cp ../materials/linters/.clang-format .
 	clang-format -n $(LIB_SRC_DIR)/*.c
 	clang-format -n $(LIB_SRC_DIR)/*.h
 	clang-format -n *.c *.h
 
 clang-replace:
-	cp ../materials/linters/.clang-format .
 	clang-format -i $(LIB_SRC_DIR)/*.c
 	clang-format -i *.c *.h
 	clang-format -i $(LIB_SRC_DIR)/*.h
 
 install:
 	cd ~
+ifeq ($(OS), Darwin)
 	curl -fsSL https://rawgit.com/kube/42homebrew/master/install.sh | zsh
+	exec zsh -l
 	brew install lcov
 	brew install gcovr
+endif
+ifeq ($(OS), Linux)
+	sudo apt update
+	sudo apt install check lcov gcovr -y
+endif
 
 clear:
 	clear

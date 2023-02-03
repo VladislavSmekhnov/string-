@@ -1,9 +1,8 @@
 # s21_string+
 
-Implementation of the string.h library with additions.
+Implementation of the `string.h` library with additions.
 
-The russian version of the task can be found in the repository.
-
+## Project completed with result: `135%`
 
 ## Contents
 0. [Preamble](#preamble)
